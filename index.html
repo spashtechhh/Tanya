@@ -1,0 +1,605 @@
+<!-- Chosen Palette: Deep Indigo/Purple base with Vibrant Pink/Purple and Orange accents. -->
+<!-- Application Structure Plan: Enhanced the colors in the Admin Panel section and added personalized messages for Tanya and Areena. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Development Packages</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Custom Dark Theme Colors */
+            --color-primary-dark: #120a22; /* Very deep purple/indigo */
+            --color-card-dark: #1e113a; /* Slightly lighter card background */
+            --color-accent-pink: #d946ef; /* Vibrant pink/purple for titles and highlights */
+            --color-highlight-orange: #fb923c; /* Orange for payment/shipping */
+            --color-pink-lighter: #f9a8d4; /* For light text accents */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-primary-dark);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Base Card Styling for Glow and 3D Effect */
+        .card, .content-box {
+            background-color: var(--color-card-dark);
+            border-radius: 0.75rem; /* rounded-xl */
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hover Effect: Stronger Lift and Glow - Applied universally */
+        .card:hover, .content-box:hover {
+            transform: translateY(-10px); /* 3D Lift */
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.6), /* Deep Shadow */
+                0 0 40px rgba(217, 70, 239, 0.4), /* Primary Pink Glow */
+                0 0 60px rgba(168, 85, 247, 0.3); /* Secondary Purple Glow */
+        }
+
+        /* Specific Card Shadows for Initial State (Subtle Glow) */
+        .card-pink-glow {
+            box-shadow: 0 0 20px rgba(217, 70, 239, 0.2);
+            border: 2px solid rgba(168, 85, 247, 0.5); /* Purple border for premium look */
+        }
+        
+        /* Orange Glow for the distinct payment/shipping box */
+        .card-orange-glow {
+            box-shadow: 0 0 20px rgba(251, 146, 60, 0.2);
+            border: 2px solid var(--color-highlight-orange);
+        }
+
+        .icon-lg {
+            width: 3rem; 
+            height: 3rem; 
+            margin-bottom: 1rem;
+        }
+        
+        /* Checkmark icon color set to the pink accent for consistency */
+        .check-icon {
+            color: var(--color-accent-pink);
+        }
+
+        /* Adjusted list styling to ensure text starts flush, fixing the "uper nichae" issue */
+        .feature-list-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        .feature-list-item > span {
+            margin-right: 0.75rem; /* Tailwind 'mr-3' */
+            margin-top: 0.25rem; /* Tailwind 'mt-1' */
+            flex-shrink: 0;
+        }
+        
+        /* Added class for tech stack sub-list alignment */
+        .tech-detail-list {
+            padding-left: 1rem; /* Indentation for list-like look */
+        }
+        .tech-detail-list > li {
+            text-indent: -0.75rem; /* Negative indent to pull text back but keep bullet/icon spacing consistent */
+            padding-left: 0.75rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="min-h-screen p-4 sm:p-8 flex flex-col items-center">
+
+        <!-- Main Title -->
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 text-center">
+            Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Website Development</span> Packages
+        </h1>
+        <p class="text-lg text-gray-300 mb-6 max-w-2xl text-center">Choose the perfect package for your business needs—from corporate profile to full-fledged E-commerce solutions.</p>
+
+        <!-- START: PERSONALIZED WELCOME MESSAGE FOR TANYA & AREENA -->
+        <div class="w-full max-w-4xl mx-auto text-center mb-10 p-4 rounded-xl bg-pink-900/20 border-2 border-pink-700/30 shadow-lg shadow-pink-900/40">
+            <p class="text-lg sm:text-2xl font-bold text-white tracking-wide">
+                🚀 <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">Hello Tanya & Areena!</span> We're thrilled to partner with fellow <span class="text-pink-400">Startup Founders</span> on your exciting journey.
+            </p>
+        </div>
+        <!-- END: PERSONALIZED WELCOME MESSAGE -->
+
+        <!-- Pricing Cards Container -->
+        <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
+
+            <!-- Card 1: Full Website (Corporate) - Pink Theme -->
+            <div class="card card-pink-glow p-6 md:p-10 rounded-xl">
+                <h2 class="text-3xl font-bold mb-2 text-white">Full Website</h2>
+                <p class="text-lg text-gray-400 mb-6">High-end corporate design for maximum credibility and lead generation.</p>
+
+                <!-- Pricing & Timeline -->
+                <div class="flex flex-col sm:flex-row items-baseline gap-4 mb-8 pb-4 border-b border-purple-500/20">
+                    <p class="text-4xl font-extrabold" style="color: var(--color-accent-pink);">
+                        ₹25,000 – ₹45,000
+                    </p>
+                    <div class="text-base text-gray-300">
+                        <p class="font-bold text-lg text-white mb-1">Total Time: 3 – 4 Weeks</p>
+                        <p class="text-sm">Design: <span class="font-semibold text-purple-300">5 – 7 Days</span> (Included) | Development starts after final design approval.</p>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <p class="text-xl font-semibold mb-4 text-purple-300">Key Features and Benefits</p>
+                <p class="text-base font-bold text-white mb-3">Technology: React.js / Next.js, Optional Node.js (Express.js) & MongoDB.</p>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="feature-list-item">
+                        <span class="flex-shrink-0 check-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <span class="font-bold text-white">High-End Corporate Look & Professional UI/UX:</span> Designed to convert visitors into inquiries and build <span class="text-pink-300 font-semibold">brand credibility</span>.
+                        </div>
+                    </li>
+                    <li class="feature-list-item">
+                        <span class="flex-shrink-0 check-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <span class="font-bold text-white">SEO-Ready and Fully Responsive:</span> Fast loading, clean code, and basic on-page optimization for <span class="text-pink-300 font-semibold">long-term organic growth</span>.
+                        </div>
+                    </li>
+                    <li class="feature-list-item">
+                        <span class="flex-shrink-0 check-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div class="w-full">
+                            <span class="font-bold text-white">Design Revisions & Redesigns:</span> 3 full revision rounds on the design concept and up to 2 full redesigns (total of 3 concepts) before development begins.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 2: E-Commerce Website - Pink Theme -->
+            <div class="card card-pink-glow p-6 md:p-10 rounded-xl">
+                <h2 class="text-3xl font-bold mb-2 text-white">E-Commerce Website</h2>
+                <p class="text-lg text-gray-400 mb-6">A high-conversion platform to sell products 24×7.</p>
+
+                <!-- Pricing & Timeline -->
+                <div class="flex flex-col sm:flex-row items-baseline gap-4 mb-8 pb-4 border-b border-purple-500/20">
+                    <p class="text-4xl font-extrabold" style="color: var(--color-accent-pink);">
+                        ₹50,000 – ₹1,20,000
+                    </p>
+                    <div class="text-base text-gray-300">
+                        <p class="font-bold text-lg text-white mb-1">Total Time: 4 – 8 Weeks (Up to 12)</p>
+                        <p class="text-sm">Design: <span class="font-semibold text-purple-300">7 – 9 Days</span> (Included) | Development starts after final design approval.</p>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <p class="text-xl font-semibold mb-4 text-purple-300">Key Features and Control</p>
+                 <p class="text-base font-bold text-white mb-3">Technology: Full Stack: React.js, Next.js, Node.js + Express.js, MongoDB, Razorpay/Stripe.</p>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="feature-list-item">
+                        <span class="flex-shrink-0 check-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <span class="font-bold text-white">Modern E-Commerce UI & Secure Payments:</span> Clean, high-conversion design with secure payment gateway integration.
+                        </div>
+                    </li>
+                    <li class="feature-list-item">
+                        <span class="flex-shrink-0 check-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <span class="font-bold text-white">Full Admin Panel & Product Management:</span> You get <span class="text-pink-300 font-semibold">complete control</span> to easily manage products, pricing, stock, orders, coupons, and delivery status.
+                        </div>
+                    </li>
+                    <li class="feature-list-item">
+                        <span class="flex-shrink-0 check-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div>
+                            <span class="font-bold text-white">Razorpay & Shiprocket Integration (Included):</span> Complete setup for hassle-free online payments and multi-courier shipping.
+                        </div>
+                    </li>
+                    <li class="feature-list-item">
+                        <span class="flex-shrink-0 check-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <div class="w-full">
+                            <span class="font-bold text-white">Design Revisions & Redesigns:</span> 3 full revision rounds on the design concept and 1 full redesign (total of 2 concepts) before development begins.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <!-- SECTION 2: ADMIN PANEL DETAILS (COLOR ENHANCED) -->
+        <div id="admin-panel-details" class="content-box card-pink-glow w-full max-w-6xl p-8 rounded-xl mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-center text-white">
+                🖥️ The Power of Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500">E-Commerce Admin Panel</span>
+            </h2>
+
+            <!-- Introduction -->
+            <p class="text-xl font-semibold text-center text-gray-300 mb-8 max-w-4xl mx-auto">
+                An Admin Panel is a backend interface that allows the website owner or admin to manage the website’s content, products, orders, users, and reports. Think of it as the <span class="text-pink-300 font-bold">control room</span> of your E-commerce website.
+            </p>
+
+            <!-- Main Functions (Grid Layout) -->
+            <!-- Changed text color for main heading for more vibrancy -->
+            <h3 class="text-2xl font-bold mb-6" style="color: var(--color-accent-pink);">🔑 Main Functions of an Admin Panel (E-commerce)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <!-- 1. Product Management -->
+                <!-- Enhanced border and hover shadow for better look -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <!-- Changed text color to vibrant pink -->
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">1. Product Management</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Add, edit, or delete products</li>
+                        <li>Update product descriptions, images, and pricing</li>
+                        <li>Manage stock/quantity</li>
+                        <li>Organize categories & tags</li>
+                    </ul>
+                </div>
+                <!-- 2. Order Management -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">2. Order Management</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>View all orders (pending, shipped, delivered, canceled)</li>
+                        <li>Update order status</li>
+                        <li>Process refunds and returns</li>
+                        <li>Generate invoices</li>
+                    </ul>
+                </div>
+                <!-- 3. User / Customer Management -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">3. User / Customer Management</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Manage customer database (name, email, address, phone)</li>
+                        <li>Track customer accounts and activity</li>
+                        <li>View purchase history</li>
+                    </ul>
+                </div>
+                <!-- 4. Payments & Transactions -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">4. Payments & Transactions</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Track payment status (paid, pending, failed)</li>
+                        <li>Monitor transactions via payment gateways (like Razorpay)</li>
+                        <li>Generate financial reports</li>
+                    </ul>
+                </div>
+                <!-- 5. Shipping / Delivery Management -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">5. Shipping / Delivery Management</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Integrate with shipping services (like Shiprocket, Pickrr)</li>
+                        <li>Print shipping labels</li>
+                        <li>Track shipments</li>
+                        <li>Manage COD (Cash on Delivery) orders</li>
+                    </ul>
+                </div>
+                <!-- 6. Discounts & Offers -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">6. Discounts & Offers</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Create discount codes or coupons</li>
+                        <li>Set up seasonal or product-level promotions</li>
+                        <li>Manage loyalty points and referral programs</li>
+                    </ul>
+                </div>
+                <!-- 7. Reports & Analytics -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">7. Reports & Analytics</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Sales reports (daily, weekly, monthly)</li>
+                        <li>Revenue, top-selling products, inventory reports</li>
+                        <li>Customer engagement and activity metrics</li>
+                    </ul>
+                </div>
+                <!-- 8. Website Content / CMS -->
+                <div class="p-4 rounded-lg bg-white/5 border border-pink-500/50 transition duration-200 hover:bg-white/10 hover:shadow-lg hover:shadow-pink-800/30">
+                    <p class="font-extrabold text-xl mb-2" style="color: var(--color-accent-pink);">8. Website Content / CMS</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Update banners, sliders, and homepage content</li>
+                        <li>Manage blogs or articles (if available)</li>
+                        <li>SEO settings (meta tags, keywords)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- How it Works -->
+            <div class="mt-10 pt-6 border-t border-purple-500/30 max-w-4xl mx-auto">
+                <!-- Changed text color for sub-heading for more vibrancy -->
+                <h3 class="text-2xl font-bold mb-4 text-center" style="color: var(--color-accent-pink);">⚡ How it Works (Step by Step)</h3>
+                <ol class="text-base text-gray-300 space-y-3 ml-6 list-decimal list-outside">
+                    <li>Admin logs in with secure credentials.</li>
+                    <li>Dashboard displays key statistics (orders, revenue, users).</li>
+                    <li>Admin manages Products → add, edit, or delete items.</li>
+                    <li>Admin manages Orders → track and update status.</li>
+                    <li>Admin manages Shipping / Payments → handle deliveries and transactions.</li>
+                    <li>Admin checks Reports / Analytics → monitor sales, stock, and performance.</li>
+                </ol>
+                <p class="text-lg text-gray-400 italic mt-6 text-center">
+                    Essentially, the Admin Panel gives <span class="font-extrabold text-white">complete control</span> over the E-commerce website without touching the frontend code.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- SECTION 3: E-COMMERCE ESSENTIALS (Razorpay & Shiprocket) - Orange/Glow Theme -->
+        <div id="payments-shipping-details" class="content-box card-orange-glow w-full max-w-6xl p-8 rounded-xl mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-center text-white">
+                Included <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-red-500">E-Commerce Essentials</span> (Payments & Logistics)
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Razorpay Section -->
+                <div class="p-6 rounded-lg border border-orange-500/50 shadow-lg bg-white/5 transition-shadow hover:shadow-orange-900/50">
+                    <div class="flex items-center mb-4">
+                        <!-- Icon for Razorpay (Rupee/Payment) -->
+                        <svg class="icon-lg mr-4" style="color: var(--color-highlight-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2c1.657 0 3 .895 3 2s-1.343 2-3 2m0-8V4m0 12v-4m-6 3h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <h3 class="text-2xl font-bold" style="color: var(--color-highlight-orange);">✅ Razorpay — Online Payments</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Razorpay is an online payment gateway used by businesses to accept payments via their website, mobile app, or payment links.</p>
+                    
+                    <p class="font-bold text-white mb-2">Key Features:</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Accepts Credit/Debit Cards, UPI, Netbanking, Wallets, EMI, PayLater</li>
+                        <li>Subscriptions and Recurring Payments, Payment Links, and Invoicing</li>
+                        <li>Full transaction tracking via dashboard</li>
+                        <li><span class="text-orange-300 font-semibold">International Payments:</span> Accept payments in USD, EUR, GBP, etc. (currency is automatically converted to INR).</li>
+                    </ul>
+                    <p class="font-bold text-white mt-4 mb-1">Alternatives:</p>
+                    <p class="text-xs text-gray-500 italic">Cashfree, Stripe (Best for global SaaS), PayU, Paytm PG, Instamojo.</p>
+                </div>
+                
+                <!-- Shiprocket Section -->
+                <div class="p-6 rounded-lg border border-orange-500/50 shadow-lg bg-white/5 transition-shadow hover:shadow-orange-900/50">
+                    <div class="flex items-center mb-4">
+                        <!-- Icon for Shiprocket (Delivery/Truck) -->
+                        <svg class="icon-lg mr-4" style="color: var(--color-highlight-orange);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9V7a2 2 0 012-2h10a2 2 0 012 2v2m-2 10H7m0-4h14m-7 4v-4m-7 4h7m-7 0a1 1 0 01-1-1v-4a1 1 0 011-1h7a1 1 0 011 1v4a1 1 0 01-1 1z"></path>
+                        </svg>
+                        <h3 class="text-2xl font-bold" style="color: var(--color-highlight-orange);">🚚 Shiprocket — Delivery & Logistics</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">Shiprocket is a shipping and courier aggregator platform that helps e-commerce businesses manage deliveries through multiple courier partners from a single dashboard.</p>
+                    
+                    <p class="font-bold text-white mb-2">Key Features:</p>
+                    <ul class="text-sm text-gray-400 space-y-1 ml-4 list-disc list-inside">
+                        <li>Compare courier prices and automatically assign the best courier</li>
+                        <li>Real-time order tracking and instant shipment booking</li>
+                        <li>COD (Cash on Delivery) handling and returns logistics management</li>
+                        <li>Integrates with Shopify, WooCommerce, and Custom Websites</li>
+                    </ul>
+                    <p class="font-bold text-white mt-4 mb-1">Alternatives:</p>
+                    <p class="text-xs text-gray-500 italic">Pickrr, Shipyaari, Delhivery (Direct), XpressBees/Ecom Express (E-com focused), Bluedart/DHL (Premium).</p>
+                </div>
+            </div>
+
+            <!-- Combined Summary -->
+            <div class="mt-8 pt-4 border-t border-orange-500/30 text-center">
+                <p class="text-xl font-bold text-white mb-4">
+                    <span style="color: var(--color-highlight-orange);" class="font-extrabold">⚡ Summary:</span>
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-8 text-xl font-bold">
+                    <span class="text-pink-300 border-b border-pink-500 pb-1">Payment Inbound → Razorpay</span>
+                    <span class="text-orange-300 border-b border-orange-500 pb-1">Delivery Outbound → Shiprocket</span>
+                </div>
+                <p class="text-lg text-gray-300 font-semibold mt-4">
+                    This setup is <span class="font-extrabold text-white">included in your package price</span> at zero additional cost.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- SECTION 4: TECHNOLOGY STACK DETAILS - Pink/Glow Theme (Aligned Text) -->
+        <div id="tech-stack-details" class="content-box card-pink-glow w-full max-w-6xl p-8 rounded-xl mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-center text-white">
+                Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">State-of-the-Art</span> Technology Stack
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                
+                <!-- Frontend -->
+                <div class="p-4 rounded-lg border border-purple-600/50 shadow-lg bg-white/5 transition-shadow hover:shadow-purple-900/50">
+                    <!-- Icon for Frontend (Code) -->
+                    <svg class="icon-lg mx-auto" style="color: var(--color-accent-pink);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <span class="text-2xl font-bold text-white">Frontend: <span style="color: var(--color-accent-pink);">React.js / Next.js</span></span>
+                    <p class="text-lg font-semibold mt-2 mb-2 text-gray-300">Dynamic and Responsive UI</p>
+                    <ul class="text-sm text-gray-400 text-left space-y-2 mt-4 tech-detail-list">
+                        <li><span class="text-pink-300 font-semibold">React.js:</span> Powerful JavaScript library for fast, reusable UI components.</li>
+                        <li><span class="text-pink-300 font-semibold">Next.js:</span> Server-Side Rendering (SSR) framework for better SEO and performance.</li>
+                        <li><span class="text-pink-300 font-semibold">Tailwind CSS:</span> Utility-first framework for rapid, mobile-first design development.</li>
+                    </ul>
+                </div>
+
+                <!-- Backend -->
+                <div class="p-4 rounded-lg border border-purple-600/50 shadow-lg bg-white/5 transition-shadow hover:shadow-purple-900/50">
+                    <!-- Icon for Backend (Database/Server) -->
+                    <svg class="icon-lg mx-auto" style="color: var(--color-accent-pink);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path>
+                    </svg>
+                    <span class="text-2xl font-bold text-white">Backend: <span style="color: var(--color-accent-pink);">Node & Express</span></span>
+                    <p class="text-lg font-semibold mt-2 mb-2 text-gray-300">Fast and Scalable APIs</p>
+                    <ul class="text-sm text-gray-400 text-left space-y-2 mt-4 tech-detail-list">
+                        <li><span class="text-pink-300 font-semibold">Node.js + Express.js:</span> The most compatible and efficient combination for React.js.</li>
+                        <li><span class="text-pink-300 font-semibold">CORS Handling:</span> Smoothly handles Cross-Origin Requests for seamless client-server communication.</li>
+                    </ul>
+                </div>
+
+                <!-- Database/Payments -->
+                <div class="p-4 rounded-lg border border-purple-600/50 shadow-lg bg-white/5 transition-shadow hover:shadow-purple-900/50">
+                    <!-- Icon for Database/Payments (Money/Data) -->
+                    <svg class="icon-lg mx-auto" style="color: var(--color-accent-pink);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2c1.657 0 3 .895 3 2s-1.343 2-3 2m0-8V4m0 12v-4m-6 3h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="text-2xl font-bold text-white">Data & Services: <span style="color: var(--color-accent-pink);">MongoDB & Integrations</span></span>
+                    <p class="text-lg font-semibold mt-2 mb-2 text-gray-300">Flexible Data and Integrations</p>
+                    <ul class="text-sm text-gray-400 text-left space-y-2 mt-4 tech-detail-list">
+                        <li><span class="text-pink-300 font-semibold">MongoDB:</span> Flexible document-based database, ideal for scaling.</li>
+                        <li><span class="text-pink-300 font-semibold">Payments (Razorpay/Stripe):</span> Integrated for secure, reliable, and instant payment processing.</li>
+                        <li><span class="text-pink-300 font-semibold">Shipping (Shiprocket):</span> Integrated for multi-courier shipping and logistics management.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: 16-MONTH MAINTENANCE PLAN (NOW INCLUDES SECURITY) - Aligned Text -->
+        <div class="content-box card-pink-glow w-full max-w-6xl p-8 rounded-xl mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-center text-white">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500">16-Month Professional</span> Maintenance Plan
+            </h2>
+            
+            <!-- SSL/Security Feature (Integrated Header) -->
+            <div class="mb-8 p-4 rounded-lg border-b border-pink-500/50 bg-white/10">
+                <div class="flex items-center justify-center">
+                    <svg class="w-8 h-8 mr-3" style="color: var(--color-pink-lighter);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6-6v-1a6 6 0 1112 0v1m-2 2h-8a2 2 0 00-2 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 00-2-2z"></path></svg>
+                    <h3 class="text-xl font-extrabold" style="color: var(--color-pink-lighter);">
+                        Included: Security and Trust Guarantee (SSL Certificate)
+                    </h3>
+                </div>
+                <p class="text-sm text-center text-gray-400 mt-2">We provide and install a Standard SSL Certificate, crucial for <span class="text-white font-semibold">secure data encryption (HTTPS)</span>, customer trust, and a positive SEO boost.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left max-w-5xl mx-auto">
+                
+                <!-- Point 1: Core Bug Fixing & Resolution -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Bug Fixing (Target/Crosshair) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.01 12.01 0 002.944 12c0 2.899 1.134 5.753 3.322 7.828l.865.865A10.01 10.01 0 0012 22a10.01 10.01 0 004.87-1.307l.865-.865c2.188-2.075 3.322-4.929 3.322-7.828a12.01 12.01 0 00-.322-3.04z"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Core Bug Fixing and Resolution:</span>
+                        <p class="text-sm text-gray-400">Immediate fixes for any unexpected errors, crashes, or functionality failure (e.g., <span class="text-white font-semibold">'Add to Cart' not working</span>).</p>
+                    </div>
+                </div>
+
+                <!-- Point 2: Code & Server Error Management -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Code/Error Management (Code Snippet) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Code and Server Error Management:</span>
+                        <p class="text-sm text-gray-400">Repairing code glitches, compatibility issues, and resolving critical issues like <span class="text-white font-semibold">'500 Server Error'</span>.</p>
+                    </div>
+                </div>
+
+                <!-- Point 3: Hosting & Server Coordination -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Hosting Coordination (Server) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Hosting and Server Coordination:</span>
+                        <p class="text-sm text-gray-400">Directly liaising with your hosting provider to troubleshoot and restore services in case of <span class="text-white font-semibold">downtime or outages</span>.</p>
+                    </div>
+                </div>
+
+                <!-- Point 4: Proactive Security Patches -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Security (Shield) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.01 12.01 0 002.944 12c0 2.899 1.134 5.753 3.322 7.828l.865.865A10.01 10.01 0 0012 22a10.01 10.01 0 004.87-1.307l.865-.865c2.188-2.075 3.322-4.929 3.322-7.828a12.01 12.01 0 00-.322-3.04z"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Proactive Security Patches:</span>
+                        <p class="text-sm text-gray-400">Applying security updates, patching vulnerabilities, and setting firewall rules to protect against <span class="text-white font-semibold">malware/hackers</span>.</p>
+                    </div>
+                </div>
+
+                <!-- Point 5: Minor UI & Visual Consistency -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for UI/Visual Consistency (Sliders) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4h-3m3 4h3m-6 0h.01M12 18v-2m0 2a2 2 0 100 4m0-4h-3m3 4h3m-6 0h.01M18 13V9m0 2a2 2 0 100 4m0-4h-3m3 4h3m-6 0h.01"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Minor UI and Visual Consistency:</span>
+                        <p class="text-sm text-gray-400">Quick fixes for minor design issues: adjusting spacing, alignment, font rendering, or <span class="text-white font-semibold">color discrepancies</span>.</p>
+                    </div>
+                </div>
+
+                <!-- Point 6: Cross-Browser/Device Compatibility -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Compatibility (Browser/Device) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1l-.75-3M3 13h18M5 17h14M7 3h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Cross-Browser/Device Compatibility:</span>
+                        <p class="text-sm text-gray-400">Ensuring the site functions perfectly on all major browsers (<span class="text-white font-semibold">Chrome, Safari, Firefox</span>) and mobile devices.</p>
+                    </div>
+                </div>
+
+                <!-- Point 7: Contact Form Reliability -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Contact Form (Document) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Contact Form Reliability:</span>
+                        <p class="text-sm text-gray-400">Troubleshooting and fixing issues where contact forms fail to submit data or send <span class="text-white font-semibold">notification emails (SMTP setup/check)</span>.</p>
+                    </div>
+                </div>
+
+                <!-- Point 8: New Browser Feature Updates -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Updates (Refresh) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.416 10H20v-5m-1.707-1.707L15 15.586m-1.414-1.414L18 10.414m-5.414-5.414l1.414-1.414M12 21a9 9 0 009-9h-2M3 12h2a9 9 0 019-9"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">New Browser Feature Updates:</span>
+                        <p class="text-sm text-gray-400">Adjusting code to resolve rendering or functionality issues caused by new <span class="text-white font-semibold">browser updates (Chrome, Edge, Safari)</span>.</p>
+                    </div>
+                </div>
+
+                <!-- Point 9: Complimentary Content Edits -->
+                <div class="flex items-start p-4 rounded-lg bg-white/5 transition duration-200 hover:bg-white/10">
+                    <span class="mr-3 mt-1 flex-shrink-0 check-icon">
+                        <!-- Icon for Content Edits (Pencil) -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.586a2 2 0 012.828 0L19 2l2 2-2.828 2.828a1 1 0 01-1.414 0l-5.656-5.656a1 1 0 010-1.414z"></path></svg>
+                    </span>
+                    <div>
+                        <span class="font-bold" style="color: var(--color-pink-lighter);">Complimentary Content Edits:</span>
+                        <p class="text-sm text-gray-400">Performing minor textual or image changes requested by the client during the support period (e.g., <span class="text-white font-semibold">updating a headline or phone number</span>).</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <p class="text-center text-lg text-gray-300 italic mt-8">Note: This 16-month plan is a <span class="font-semibold text-pink-300">zero additional cost</span> service.</p>
+        </div>
+
+        <!-- START: PERSONAL CLOSING MESSAGE & CALL TO ACTION -->
+        <div class="mt-8 w-full max-w-3xl text-center pb-10">
+            <!-- New Personal Message from SparshTech -->
+            <div class="content-box p-6 rounded-xl mb-8 border border-purple-500/50 shadow-lg shadow-purple-900/40">
+                <p class="text-2xl font-extrabold text-white mb-3 tracking-wide">
+                    🤝 <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">Startup Founders to Startup Founders.</span>
+                </p>
+                <p class="text-lg text-gray-300 italic">
+                    At SparshTech, we are also running <span class="text-pink-300 font-semibold">two of our own successful startups</span>. Working on your project, Tanya and Areena, will not only be thrilling but will also provide us with new insights and valuable lessons that we can directly apply to our ventures. Let's build and <span class="text-white font-bold">grow together!</span>
+                </p>
+            </div>
+            
+            <a href="mailto:info@sparshtech.in" class="inline-block px-10 py-4 text-xl font-bold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all shadow-xl shadow-purple-900/50 hover:shadow-2xl hover:shadow-pink-800/80">
+                Start Your Project Now
+            </a>
+        </div>
+        <!-- END: PERSONAL CLOSING MESSAGE & CALL TO ACTION -->
+
+    </div>
+
+</body>
+</html>
